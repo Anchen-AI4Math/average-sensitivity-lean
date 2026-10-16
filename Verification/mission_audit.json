@@ -1,8 +1,8 @@
 {
-  "checked_at": "2026-10-16T13:11:09.758885+00:00",
+  "checked_at": "2026-10-16T13:51:36.196509+00:00",
   "proposal_id": "f1d5911a-0f78-458d-a466-efe14879e460",
   "name": "Average sensitivity 3.762: refined coupling and a complete Lean proof",
-  "status": "Draft",
+  "status": "In review",
   "intended_visibility": "public",
   "live_mission_id": null,
   "main_theorem": "e1a9c1cb-97c1-4ea0-a4ad-d43e8412ac61",
@@ -49,6 +49,7 @@
   "all_theorem_nodes_proved": true,
   "open_proof_nodes": 0,
   "human_confirmations_performed_by_agent": false,
-  "remaining_step": "Human owner confirms the five items and clicks Submit Proposal; moderator approval makes the mission live.",
-  "review_entry": "https://prove2.me/my-missions"
+  "human_confirmed_items": 5,
+  "remaining_step": "Moderator approval makes the submitted mission live; owner submission is complete.",
+  "review_entry": "https://prove2.me/my-missions/f1d5911a-0f78-458d-a466-efe14879e460"
 }

@@ -39,8 +39,9 @@ axioms.
 
 The completed theorem tree is organized into the public-intended Research Paper
 proposal **Average sensitivity 3.762: refined coupling and a complete Lean proof**
-(`f1d5911a-0f78-458d-a466-efe14879e460`). Its current status is **Draft**, so this
-is not yet a live mission in the public catalog.
+(`f1d5911a-0f78-458d-a466-efe14879e460`). The account owner confirmed all five
+items and submitted it on 2026-10-16. Its current status is **In review**,
+awaiting moderator approval before it becomes a live public mission.
 
 The two definition references come first, followed by these accepted theorem
 references:
@@ -55,11 +56,33 @@ The proposal creates no duplicate theorem or definition statements. See
 full introduction and [`Verification/mission_audit.json`](Verification/mission_audit.json)
 for the checked structure.
 
-The account owner can review the proposal under
-[My missions](https://prove2.me/my-missions), confirm its five items, and click
-**Submit Proposal**. Prove2Me reserves this self-audit and submission step for
-the human owner; a moderator then decides public mission approval. The existing
-theorems and accepted proofs are already public independently of this proposal.
+The submitted proposal is visible to its owner under
+[My missions](https://prove2.me/my-missions/f1d5911a-0f78-458d-a466-efe14879e460).
+The required human self-audit and submission are complete. The existing theorems
+and accepted proofs are already public independently of mission approval.
+
+## Big O automatic-verifier preparation
+
+Big O's public proof form currently accepts only `dft`, `3sum`, and `apsp`.
+Average sensitivity first needs a maintainer-reviewed trusted statement and
+verifier-owned profile, as described in its
+[statement contribution guide](https://github.com/bigospeedrun/verifier/blob/main/docs/new-statements.md).
+The site issue above is a record-import request; it is not an automatic proof
+submission or a Big O verification receipt.
+
+[`Submission.lean`](Submission.lean) is a complete standalone candidate for the
+proposed average-sensitivity target, exporting
+`Race.bound : BigOSpeedrun.AverageSensitivity.Bound (1881 / 500 : ℚ)`.
+It imports only Mathlib, includes all required proof sources, and checks the
+final permitted-axiom list. The CI runs it with `autoImplicit=false`.
+Regenerate it with `python prepare_bigo.py`; the source order and output hash
+are recorded in `Verification/bigo_candidate.json`.
+
+This candidate targets the board's range `1 ≤ d ≤ n`, directly using the stronger
+arbitrary-polynomial theorem proved above. Its parameterized target is in
+[`Platform/bigo_Statement.lean`](Platform/bigo_Statement.lean). It is a proposed
+interface until Big O maintainers approve and enable it. Compilation here does
+not replace their Comparator and receipt pipeline.
 
 ## Proof and attribution
 

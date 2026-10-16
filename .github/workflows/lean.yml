@@ -17,3 +17,5 @@ jobs:
           use-mathlib-cache: true
       - name: Check final theorem axioms
         run: lake env lean AxiomAudit.lean
+      - name: Check standalone Big O candidate and axioms
+        run: lake env lean -DautoImplicit=false Submission.lean

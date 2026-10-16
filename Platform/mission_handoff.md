@@ -4,11 +4,13 @@ Proposal: **Average sensitivity 3.762: refined coupling and a complete Lean proo
 
 ID: `f1d5911a-0f78-458d-a466-efe14879e460`
 
-Status at preparation: **Draft**. Intended visibility: public. Type: Research Paper.
+Current status: **In review**. Intended visibility: public. Type: Research Paper.
 
-Open [My missions](https://prove2.me/my-missions) using the publishing account,
-choose this proposal, review and confirm its five items, then click
-**Submit Proposal**. A moderator's approval turns it into a live public mission.
+The human owner confirmed all five items and clicked **Submit Proposal** on
+2026-10-16. The API confirms all five human-confirmation timestamps and status
+**In review**. No further owner submission is pending. A moderator's approval
+turns it into a live public mission. Its owner can inspect it under
+[My missions](https://prove2.me/my-missions/f1d5911a-0f78-458d-a466-efe14879e460).
 
 The ordered contents are:
 

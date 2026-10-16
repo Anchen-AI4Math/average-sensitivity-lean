@@ -1,0 +1,163 @@
+{
+  "entry_point": "Race.bound",
+  "target": "BigOSpeedrun.AverageSensitivity.Bound (1881 / 500 : \u211a)",
+  "bound": "1881/500",
+  "status": "candidate-for-proposed-target-not-yet-enabled-by-Big-O",
+  "modules": [
+    {
+      "name": "OAI.Combinatorics.GotsmanLinial.Model",
+      "path": "OAI/Combinatorics/GotsmanLinial/Model.lean"
+    },
+    {
+      "name": "OAI.Combinatorics.GotsmanLinial.Statement",
+      "path": "OAI/Combinatorics/GotsmanLinial/Statement.lean"
+    },
+    {
+      "name": "OAI.Combinatorics.GotsmanLinial.BinomialMoments",
+      "path": "OAI/Combinatorics/GotsmanLinial/BinomialMoments.lean"
+    },
+    {
+      "name": "OAI.Combinatorics.GotsmanLinial.ScalarIncrements",
+      "path": "OAI/Combinatorics/GotsmanLinial/ScalarIncrements.lean"
+    },
+    {
+      "name": "OAI.Combinatorics.GotsmanLinial.FiniteCoupling",
+      "path": "OAI/Combinatorics/GotsmanLinial/FiniteCoupling.lean"
+    },
+    {
+      "name": "OAI.Combinatorics.GotsmanLinial.HilbertSchmidt",
+      "path": "OAI/Combinatorics/GotsmanLinial/HilbertSchmidt.lean"
+    },
+    {
+      "name": "OAI.Combinatorics.GotsmanLinial.ProjectionBlocks",
+      "path": "OAI/Combinatorics/GotsmanLinial/ProjectionBlocks.lean"
+    },
+    {
+      "name": "OAI.Combinatorics.GotsmanLinial.BlockCoupling",
+      "path": "OAI/Combinatorics/GotsmanLinial/BlockCoupling.lean"
+    },
+    {
+      "name": "OAI.Combinatorics.GotsmanLinial.Commutator",
+      "path": "OAI/Combinatorics/GotsmanLinial/Commutator.lean"
+    },
+    {
+      "name": "OAI.Combinatorics.GotsmanLinial.CoordinateMultipliers",
+      "path": "OAI/Combinatorics/GotsmanLinial/CoordinateMultipliers.lean"
+    },
+    {
+      "name": "OAI.Combinatorics.GotsmanLinial.CubeOperators",
+      "path": "OAI/Combinatorics/GotsmanLinial/CubeOperators.lean"
+    },
+    {
+      "name": "OAI.Combinatorics.GotsmanLinial.Walsh",
+      "path": "OAI/Combinatorics/GotsmanLinial/Walsh.lean"
+    },
+    {
+      "name": "OAI.Combinatorics.GotsmanLinial.PolynomialDegree",
+      "path": "OAI/Combinatorics/GotsmanLinial/PolynomialDegree.lean"
+    },
+    {
+      "name": "OAI.Combinatorics.GotsmanLinial.SignParity",
+      "path": "OAI/Combinatorics/GotsmanLinial/SignParity.lean"
+    },
+    {
+      "name": "OAI.Combinatorics.GotsmanLinial.EdgeRecovery",
+      "path": "OAI/Combinatorics/GotsmanLinial/EdgeRecovery.lean"
+    },
+    {
+      "name": "OAI.Combinatorics.GotsmanLinial.ProjectionTrace",
+      "path": "OAI/Combinatorics/GotsmanLinial/ProjectionTrace.lean"
+    },
+    {
+      "name": "OAI.Combinatorics.GotsmanLinial.WalshDimensions",
+      "path": "OAI/Combinatorics/GotsmanLinial/WalshDimensions.lean"
+    },
+    {
+      "name": "OAI.Combinatorics.GotsmanLinial.WeightedGrading",
+      "path": "OAI/Combinatorics/GotsmanLinial/WeightedGrading.lean"
+    },
+    {
+      "name": "OAI.Combinatorics.GotsmanLinial.CoordinateDegree",
+      "path": "OAI/Combinatorics/GotsmanLinial/CoordinateDegree.lean"
+    },
+    {
+      "name": "OAI.Combinatorics.GotsmanLinial.GradingShift",
+      "path": "OAI/Combinatorics/GotsmanLinial/GradingShift.lean"
+    },
+    {
+      "name": "OAI.Combinatorics.GotsmanLinial.BlockVanishing",
+      "path": "OAI/Combinatorics/GotsmanLinial/BlockVanishing.lean"
+    },
+    {
+      "name": "OAI.Combinatorics.GotsmanLinial.Main",
+      "path": "OAI/Combinatorics/GotsmanLinial/Main.lean"
+    },
+    {
+      "name": "AverageSensitivity.RefinedCoupling",
+      "path": "AverageSensitivity/RefinedCoupling.lean"
+    },
+    {
+      "name": "AverageSensitivity.BinomialMAD",
+      "path": "AverageSensitivity/BinomialMAD.lean"
+    },
+    {
+      "name": "AverageSensitivity.BlockRefinement",
+      "path": "AverageSensitivity/BlockRefinement.lean"
+    },
+    {
+      "name": "AverageSensitivity.ConstantExtraction",
+      "path": "AverageSensitivity/ConstantExtraction.lean"
+    },
+    {
+      "name": "AverageSensitivity.PolynomialBound",
+      "path": "AverageSensitivity/PolynomialBound.lean"
+    },
+    {
+      "name": "AverageSensitivity.Multilinearization",
+      "path": "AverageSensitivity/Multilinearization.lean"
+    },
+    {
+      "name": "BigOStatement",
+      "path": "Platform/bigo_Statement.lean"
+    }
+  ],
+  "imports": [
+    "Mathlib.Algebra.MvPolynomial.Degrees",
+    "Mathlib.Algebra.BigOperators.Field",
+    "Mathlib.Data.Fintype.BigOperators",
+    "Mathlib.Analysis.Real.Sqrt",
+    "Mathlib.Tactic.NormNum",
+    "Mathlib.Algebra.BigOperators.Fin",
+    "Mathlib.Data.Fin.Rev",
+    "Mathlib.Data.Nat.Choose.Sum",
+    "Mathlib.Tactic.FieldSimp",
+    "Mathlib.Data.Real.Basic",
+    "Mathlib.Tactic.Linarith",
+    "Mathlib.Algebra.Order.BigOperators.Ring.Finset",
+    "Mathlib.Tactic.Ring",
+    "Mathlib.Analysis.Complex.Basic",
+    "Mathlib.LinearAlgebra.Matrix.Trace",
+    "Mathlib.Analysis.CStarAlgebra.Matrix",
+    "Mathlib.Analysis.InnerProductSpace.Adjoint",
+    "Mathlib.LinearAlgebra.Trace",
+    "Mathlib.Tactic",
+    "Mathlib.LinearAlgebra.UnitaryGroup",
+    "Mathlib.LinearAlgebra.Matrix.Hermitian",
+    "Mathlib.InformationTheory.Hamming",
+    "Mathlib.Algebra.BigOperators.Group.Finset.Piecewise",
+    "Mathlib.Algebra.BigOperators.Ring.Finset",
+    "Mathlib.Analysis.InnerProductSpace.PiL2",
+    "Mathlib.Data.Finset.SymmDiff",
+    "Mathlib.Data.Fintype.Powerset",
+    "Mathlib.LinearAlgebra.FiniteDimensional.Lemmas",
+    "Mathlib.Data.Complex.BigOperators",
+    "Mathlib.Algebra.Order.BigOperators.Group.Finset",
+    "Mathlib.Analysis.InnerProductSpace.Projection.FiniteDimensional",
+    "Mathlib.LinearAlgebra.Dimension.Constructions",
+    "Mathlib.Data.Nat.Choose.Central"
+  ],
+  "sha256": "b20c075b1bd5390b52fbe3ad32512c6128c64ad26391d1922ed9f6acff5c440a",
+  "byte_count": 204875,
+  "toolchain": "leanprover/lean4:v4.33.1",
+  "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474"
+}
