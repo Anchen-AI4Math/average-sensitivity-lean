@@ -1,0 +1,9 @@
+import Mathlib
+import Definitions.Def_AverageSensitivity_Constants3762
+open scoped BigOperators
+open AverageSensitivity
+
+theorem AverageSensitivity.extract_constant (n d : ℕ) (hn : 1 ≤ n) (hd : 1 ≤ d)
+    (A : ℝ) (htrivial : A ≤ (n:ℝ))
+    (hrefined : A ≤ 8*(d:ℝ)*mad n+2*(d:ℝ)^2) :
+    A ≤ (1881/500:ℝ)*(d:ℝ)*Real.sqrt (n:ℝ) := by sorry

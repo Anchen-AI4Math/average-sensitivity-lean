@@ -1,0 +1,138 @@
+{
+  "repository": "https://github.com/openai/math",
+  "revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "files": [
+    {
+      "path": "OAI/Combinatorics/GotsmanLinial/BinomialMoments.lean",
+      "upstream_git_blob": "d473ed04c121a977cc58c54673579a6d20ae5cbd",
+      "local_sha256": "2b63fe3cbcc23b470211fa3413e2c954f6a8eab5c24fb7aec204af217dac933f",
+      "modified": false
+    },
+    {
+      "path": "OAI/Combinatorics/GotsmanLinial/BlockCoupling.lean",
+      "upstream_git_blob": "2d166ccfadbb9af94859b50ecafc5f9847ed01be",
+      "local_sha256": "6226c36081740b1c231d435d43103a865f6b14f3fa2e209fab581a2e2367c88e",
+      "modified": false
+    },
+    {
+      "path": "OAI/Combinatorics/GotsmanLinial/BlockVanishing.lean",
+      "upstream_git_blob": "cbb9ea61a5adc8bf3b220247034caaafef23a7eb",
+      "local_sha256": "fa7499e088055a8db4894b5c97dd5f88255cf82a6a859d60e26c5559ea197f48",
+      "modified": false
+    },
+    {
+      "path": "OAI/Combinatorics/GotsmanLinial/Commutator.lean",
+      "upstream_git_blob": "9bd1478b410526788dfa89b67f7b726b2493ff57",
+      "local_sha256": "2dda489b60aee8314d006376bb93e2b84834ae2a158e2e397b271982f1d4a49e",
+      "modified": false
+    },
+    {
+      "path": "OAI/Combinatorics/GotsmanLinial/CoordinateDegree.lean",
+      "upstream_git_blob": "68292ca213694825df56172b4e2b339e24a72a72",
+      "local_sha256": "4fee5b4ef11d9ed405dca9fd516104cd88cf1781b0c2a3f60b0ed8fd804ce628",
+      "modified": false
+    },
+    {
+      "path": "OAI/Combinatorics/GotsmanLinial/CoordinateMultipliers.lean",
+      "upstream_git_blob": "e889109b96c3b6f2b06875b2734a94075ae03dc9",
+      "local_sha256": "a2d2d420141cc5ff270e074c6e45420ba59d86d60a2e8c0c498c515e37f7d3a3",
+      "modified": false
+    },
+    {
+      "path": "OAI/Combinatorics/GotsmanLinial/CubeOperators.lean",
+      "upstream_git_blob": "0f590af3bec414952f35005819eddbc896e5bb65",
+      "local_sha256": "77bba5bf545171cbf6097bc6fe0eac6a026d81aa0bc9a8efbfa6dd95df4f0eb9",
+      "modified": true
+    },
+    {
+      "path": "OAI/Combinatorics/GotsmanLinial/EdgeRecovery.lean",
+      "upstream_git_blob": "0920e9bdcf0041ce0b3d3c40e27e59832cbba9c5",
+      "local_sha256": "b5766f15e1a12b34fea62c43fbb77db004ac0d4ed09b393ba016a921da58ed96",
+      "modified": true
+    },
+    {
+      "path": "OAI/Combinatorics/GotsmanLinial/FiniteCoupling.lean",
+      "upstream_git_blob": "a3ef40735d0551b3d680d9c4e67e0e8f120fabd8",
+      "local_sha256": "9dc19d46ac3273b1078e1dbb37357b7e4daf3189279ab193945892803a64d5fb",
+      "modified": false
+    },
+    {
+      "path": "OAI/Combinatorics/GotsmanLinial/GradingShift.lean",
+      "upstream_git_blob": "2b2199c9a04b9374758d26005400ff1028f97f7d",
+      "local_sha256": "4f92211b171a5ba77fa7cbf8aadb9dd827e79d867e33b2dd55fa89fb84150b04",
+      "modified": false
+    },
+    {
+      "path": "OAI/Combinatorics/GotsmanLinial/HilbertSchmidt.lean",
+      "upstream_git_blob": "ca6522116e8283cded331a615b009a427d9fbe19",
+      "local_sha256": "f614eb7c49b7cca5bb94316a554e47fab95920044d49e96a0438c804ce3f62fe",
+      "modified": false
+    },
+    {
+      "path": "OAI/Combinatorics/GotsmanLinial/Main.lean",
+      "upstream_git_blob": "5ab67c81020533ebca1b16d94a863c8d176e31ba",
+      "local_sha256": "5e9f32c670a76d0e271b9f1565788533da99669bf85854ef1fe35ed02b554c0b",
+      "modified": false
+    },
+    {
+      "path": "OAI/Combinatorics/GotsmanLinial/Model.lean",
+      "upstream_git_blob": "fe42ea84d4bf21bee7da1491674254a125f46c5b",
+      "local_sha256": "babc05672496b5525c163c87b9945597754a46f3fb89c98ab43e06fa52ba7f0d",
+      "modified": false
+    },
+    {
+      "path": "OAI/Combinatorics/GotsmanLinial/PolynomialDegree.lean",
+      "upstream_git_blob": "d7a007dbc813b47d1b5f4b658b60bc8075870ce9",
+      "local_sha256": "3b2a481251ea0c7125c30ae4c9ef10bc97371f1e9a73db5660b1cb89bbcdd43c",
+      "modified": true
+    },
+    {
+      "path": "OAI/Combinatorics/GotsmanLinial/ProjectionBlocks.lean",
+      "upstream_git_blob": "524ac7ad932b8e05ad9847b05285b5e107e76875",
+      "local_sha256": "127245dc3558d78b4622ea89f24ebe0e5356d8e38af636508831fc79b7d03a24",
+      "modified": false
+    },
+    {
+      "path": "OAI/Combinatorics/GotsmanLinial/ProjectionTrace.lean",
+      "upstream_git_blob": "d01cec1c44712d988d434a427048725771e0a307",
+      "local_sha256": "eddb2911e36fb0ef480c6baaa1d0f2aad47611703a2c37209a40c13608b9444b",
+      "modified": false
+    },
+    {
+      "path": "OAI/Combinatorics/GotsmanLinial/ScalarIncrements.lean",
+      "upstream_git_blob": "8c3c75d269d0fd76576d9c7e40d84ded87993627",
+      "local_sha256": "6c509a8e5afd48c0e4aeed0f8ea9828e595569995905d5e15b1e9f4ea2e05a77",
+      "modified": true
+    },
+    {
+      "path": "OAI/Combinatorics/GotsmanLinial/SignParity.lean",
+      "upstream_git_blob": "6cb9b569e1618b48f07a24be746be54742aa6676",
+      "local_sha256": "843ed2998242de9dd06132c45bbf9f4273a6e4383b639b6bc01251b4897c75d0",
+      "modified": false
+    },
+    {
+      "path": "OAI/Combinatorics/GotsmanLinial/Statement.lean",
+      "upstream_git_blob": "eb6048ffb58bc2aa3ddc479d69be2514f47a9605",
+      "local_sha256": "5f167d905dbf114b5a2c6bb8c335ef322189454a40e0aee53973bf0db3b5c7e7",
+      "modified": false
+    },
+    {
+      "path": "OAI/Combinatorics/GotsmanLinial/Walsh.lean",
+      "upstream_git_blob": "a01636410331941c96b622339d3a10f7c95f5728",
+      "local_sha256": "24bf55d6a2351662c2079bfb108fde5c18758064684cce114177a57c67f050f2",
+      "modified": true
+    },
+    {
+      "path": "OAI/Combinatorics/GotsmanLinial/WalshDimensions.lean",
+      "upstream_git_blob": "7efda552c0c9dfaef84557ab426baa6bec3aaaac",
+      "local_sha256": "6928b531a5f2d53d3803f0a116662870938b5b93c283bff65fef78c7e6fbfcf3",
+      "modified": false
+    },
+    {
+      "path": "OAI/Combinatorics/GotsmanLinial/WeightedGrading.lean",
+      "upstream_git_blob": "4aab6981eabd6ff967e49a5f0c07f83af34e31c3",
+      "local_sha256": "f725f96617a613a3949a716f2835d0cb4192d0011298bf8aaf778a9710576a88",
+      "modified": false
+    }
+  ]
+}

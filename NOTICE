@@ -1,0 +1,20 @@
+Average sensitivity coefficient 3.762
+Published by Anchen0823, 2026. Developed with assistance from OpenAI Codex.
+
+The OAI/ modules derive from OpenAI/math, revision
+1581d4cbdd69a0faf34b2089614fe2a814316a6a, under Apache-2.0.
+Modified files carry compatibility-change notices. Upstream mathematical
+construction and the original constant-eight proof are attributed to OpenAI.
+
+The improved finite one-sided coupling bound and the dimension-degree estimate
+are from Prathmesh Lagdive, Vaibhav Aglave, Suraj Damre,
+An elementary improvement of the average sensitivity bound for polynomial
+threshold functions (2026), source revision
+5e9f26cf74935f08be20f9ac4deb57b291d707d8.
+Their manuscript is CC BY 4.0 and their verification code is Apache-2.0.
+No manuscript text is reproduced here. The new Lean proofs and constant
+extraction are provided under Apache-2.0.
+
+Definitions/Def_GotsmanLinial.lean is the original platform problem interface
+from OpenAI/math revision adc7f1241b42e322a6451854ab7e4b4c146bf78a,
+as exposed by Prove2Me. Its provenance comments are retained.

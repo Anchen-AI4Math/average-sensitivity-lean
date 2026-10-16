@@ -1,0 +1,23 @@
+[
+  {
+    "name": "finite_coupling_refined",
+    "module": "RefinedCoupling",
+    "theorem_name": "AverageSensitivity.finite_coupling_refined",
+    "preamble": "import Mathlib\nopen scoped BigOperators\n",
+    "formal_statement": "theorem AverageSensitivity.finite_coupling_refined {Ω : Type*} [Fintype Ω]\n    (w U V : Ω → ℝ) (m a : ℝ)\n    (hw : ∀ i, 0 ≤ w i) (hprob : ∑ i, w i = 1)\n    (hsame : ∀ φ : ℝ → ℝ, ∑ i, w i * φ (U i) = ∑ i, w i * φ (V i))\n    (ha : 0 ≤ a) (hstep : ∀ i, w i ≠ 0 → V i-U i ≤ a) :\n    ∑ i, w i*(U i-V i)^2 ≤ 4*a*(∑ i, w i*|U i-m|)+a^2 := by sorry\n"
+  },
+  {
+    "name": "extract_constant",
+    "module": "ConstantExtraction",
+    "theorem_name": "AverageSensitivity.extract_constant",
+    "preamble": "import Mathlib\nimport Definitions.Def_AverageSensitivity_Constants3762\nopen scoped BigOperators\nopen AverageSensitivity\n",
+    "formal_statement": "theorem AverageSensitivity.extract_constant (n d : ℕ) (hn : 1 ≤ n) (hd : 1 ≤ d)\n    (A : ℝ) (htrivial : A ≤ (n:ℝ))\n    (hrefined : A ≤ 8*(d:ℝ)*mad n+2*(d:ℝ)^2) :\n    A ≤ (1881/500:ℝ)*(d:ℝ)*Real.sqrt (n:ℝ) := by sorry\n"
+  },
+  {
+    "name": "polynomial_bound_3762_general",
+    "module": "Multilinearization",
+    "theorem_name": "AverageSensitivity.polynomial_bound_3762_general",
+    "preamble": "import Mathlib\nimport Definitions.Def_GotsmanLinial\nopen OAI.LeanBlast.GotsmanLinial\nopen scoped BigOperators\n",
+    "formal_statement": "theorem AverageSensitivity.polynomial_bound_3762_general {n d : ℕ} (hn : 1≤n) (hd : 1≤d)\n    (p : MvPolynomial (Fin n) ℝ) (hdegree : p.totalDegree≤d) :\n    averageSensitivity (polynomialThreshold p) ≤ (1881/500:ℝ)*(d:ℝ)*Real.sqrt (n:ℝ) := by sorry\n"
+  }
+]

@@ -1,0 +1,9 @@
+import Mathlib
+open scoped BigOperators
+
+theorem AverageSensitivity.finite_coupling_refined {Ω : Type*} [Fintype Ω]
+    (w U V : Ω → ℝ) (m a : ℝ)
+    (hw : ∀ i, 0 ≤ w i) (hprob : ∑ i, w i = 1)
+    (hsame : ∀ φ : ℝ → ℝ, ∑ i, w i * φ (U i) = ∑ i, w i * φ (V i))
+    (ha : 0 ≤ a) (hstep : ∀ i, w i ≠ 0 → V i-U i ≤ a) :
+    ∑ i, w i*(U i-V i)^2 ≤ 4*a*(∑ i, w i*|U i-m|)+a^2 := by sorry

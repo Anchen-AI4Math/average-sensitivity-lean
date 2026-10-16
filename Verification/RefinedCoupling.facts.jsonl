@@ -1,0 +1,5 @@
+{"declEnd":{"col":27,"line":26,"offset":1106},"declStart":{"col":0,"line":13,"offset":431},"docstring":null,"kind":"decl","nameText":"displacement_majorant","privateTok":null,"valKind":"simple","valStart":{"col":30,"line":16,"offset":618}}
+{"declEnd":{"col":11,"line":52,"offset":2456},"declStart":{"col":0,"line":28,"offset":1108},"docstring":null,"kind":"decl","nameText":"finite_coupling_refined","privateTok":null,"valKind":"simple","valStart":{"col":54,"line":33,"offset":1464}}
+{"const":"AverageSensitivity.displacement_majorant","end":{"col":29,"line":13,"offset":460},"kind":"ref","start":{"col":8,"line":13,"offset":439}}
+{"const":"AverageSensitivity.finite_coupling_refined","end":{"col":31,"line":28,"offset":1139},"kind":"ref","start":{"col":8,"line":28,"offset":1116}}
+{"const":"AverageSensitivity.displacement_majorant","end":{"col":60,"line":40,"offset":1739},"kind":"ref","start":{"col":39,"line":40,"offset":1718}}

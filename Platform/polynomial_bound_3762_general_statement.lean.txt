@@ -1,0 +1,8 @@
+import Mathlib
+import Definitions.Def_GotsmanLinial
+open OAI.LeanBlast.GotsmanLinial
+open scoped BigOperators
+
+theorem AverageSensitivity.polynomial_bound_3762_general {n d : ℕ} (hn : 1≤n) (hd : 1≤d)
+    (p : MvPolynomial (Fin n) ℝ) (hdegree : p.totalDegree≤d) :
+    averageSensitivity (polynomialThreshold p) ≤ (1881/500:ℝ)*(d:ℝ)*Real.sqrt (n:ℝ) := by sorry

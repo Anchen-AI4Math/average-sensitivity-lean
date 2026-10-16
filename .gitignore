@@ -1,0 +1,12 @@
+.lake/
+*.olean
+*.ilean
+*.trace
+__pycache__/
+/UpstreamOriginal/
+/Definitions/
+/Theorems/
+/normalize_mirror.py
+/Verification/platform_sources.json
+/Verification/mirror_normalization.json
+/Verification/*_statement.lean
