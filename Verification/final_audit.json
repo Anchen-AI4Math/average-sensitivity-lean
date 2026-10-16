@@ -1,0 +1,27 @@
+{
+  "root": "e1a9c1cb-97c1-4ea0-a4ad-d43e8412ac61",
+  "root_status": "Proved",
+  "submission": "0f539328-c783-4509-a78e-a86ac777468c",
+  "supporting_theorems": [
+    "d868ab6f-94bc-4ede-a132-0fda2ff6ba88",
+    "958e04fd-0cb0-438e-bda6-fe21332f6929"
+  ],
+  "verified_paths": [
+    [
+      "d868ab6f-94bc-4ede-a132-0fda2ff6ba88",
+      "sketch-0f539328-c783-4509-a78e-a86ac777468c",
+      "e1a9c1cb-97c1-4ea0-a4ad-d43e8412ac61"
+    ],
+    [
+      "958e04fd-0cb0-438e-bda6-fe21332f6929",
+      "sketch-0f539328-c783-4509-a78e-a86ac777468c",
+      "e1a9c1cb-97c1-4ea0-a4ad-d43e8412ac61"
+    ]
+  ],
+  "open_nodes": 0,
+  "graph_nodes": 6,
+  "graph_edges": 6,
+  "graph_status": "verified connected, all theorem nodes Proved",
+  "accepted_source_sha256": "ada3b7e6ac92e00e647c8950bd16bcc5bc163b10d831ba85ed8edb0412eda9d1",
+  "accepted_source_matches_local": true
+}

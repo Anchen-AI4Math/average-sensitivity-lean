@@ -1,0 +1,77 @@
+## Motivation
+
+A **polynomial threshold function** makes a Boolean decision by evaluating a real polynomial and keeping only its sign. Its **average sensitivity** measures how often that decision changes after one uniformly chosen input coordinate is reversed, summed over all coordinate choices. This is a basic quantitative question in the analysis of Boolean functions: how much can a low-degree decision rule vary across the edges of the Boolean cube?
+
+The result collected here is a uniform bound with an explicit coefficient. The [OpenAI weighted-grading development](https://github.com/openai/math/tree/1581d4cbdd69a0faf34b2089614fe2a814316a6a/lean/OAI/Combinatorics/GotsmanLinial) supplies a complete coefficient-eight construction. [Lagdive, Aglave and Damre](https://github.com/log-prathm/ptf-average-sensitivity/tree/5e9f26cf74935f08be20f9ac4deb57b291d707d8) sharpen its probability estimate and obtain the sufficient coefficient 3.83. The [present fixed-source development](https://github.com/Anchen0823/average-sensitivity-lean/tree/a0d88dedd8e56f371e40bf1dfcd533afb51e3d04) formalizes the refined estimate, extracts the coefficient 3.762, and connects it to the full polynomial-threshold statement.
+
+This mission organizes that completed result and its reusable supporting theorems. Its goal and both milestones already have accepted Lean proofs. It does not present the coefficient as optimal, and it makes no claim of exhaustive historical priority.
+
+## Setting
+
+Let $n,d$ be positive integers, and let $p$ be a real polynomial in $n$ variables with total degree at most $d$. Choose an input $x$ uniformly from the **sign cube** $\{-1,1\}^n$. For a coordinate $i$, write $x^{\oplus i}$ for the same input with coordinate $i$ negated. The threshold convention is
+
+$$f(x)=\begin{cases}1,&p(x)\ge0,\\-1,&p(x)<0.\end{cases}$$
+
+In particular, a zero of the polynomial is assigned the positive sign. The average sensitivity is
+
+$$\operatorname{AS}(f)=\sum_{i=1}^{n}\Pr\{f(x)\ne f(x^{\oplus i})\}.$$
+
+For the scalar supporting statements, let $B_n$ have the symmetric binomial distribution with parameters $n$ and $1/2$. Its **mean absolute deviation** is
+
+$$b_n=\mathbb E|B_n-n/2|=2^{-n-1}\sum_{j=0}^{n}\binom nj|2j-n|.$$
+
+The accompanying definition module fixes this finite sum and the normalized central coefficient $c_k=4^{-k}\binom{2k}{k}$. These definitions contain no estimates or unproved hypotheses.
+
+## Formalization targets
+
+### Goal — the coefficient 3.762 for arbitrary real polynomials
+
+For every $n,d\ge1$ and every real polynomial of total degree at most $d$, prove
+
+$$\operatorname{AS}(\operatorname{sign}p)\le\frac{1881}{500}\,d\sqrt n.$$
+
+The goal is the published theorem [AverageSensitivity.polynomial_bound_3762_general](https://prove2.me/theorems/e1a9c1cb-97c1-4ea0-a4ad-d43e8412ac61). It has no multilinearity hypothesis and no requirement that $d\le n$. The narrower range $1\le d\le n$ used by the Big O board is therefore included. The goal's fixed coefficient records this particular verified result; a future sharper coefficient would be a separate statement.
+
+### Milestone 1 — the refined finite one-sided coupling estimate
+
+Let a finite set carry nonnegative probability weights $w$, and let real functions $U,V$ have identical weighted distributions. Let $m$ be any real centre and let $a\ge0$. If $V-U\le a$ on the support of the weights, prove
+
+$$\mathbb E(U-V)^2\le4a\mathbb E|U-m|+a^2.$$
+
+This is the finite form of the first estimate in Lemma 2 of Lagdive, Aglave and Damre. The centre is arbitrary; independence, exchangeability and a two-sided displacement bound are not hypotheses. Its [published formalization](https://prove2.me/theorems/d868ab6f-94bc-4ede-a132-0fda2ff6ba88) is already proved.
+
+### Milestone 2 — exact extraction of the universal coefficient
+
+For positive integers $n,d$ and a real number $A$, prove the scalar implication
+
+$$A\le n,\qquad A\le8db_n+2d^2\quad\Longrightarrow\quad A\le\frac{1881}{500}d\sqrt n.$$
+
+This is [AverageSensitivity.extract_constant](https://prove2.me/theorems/958e04fd-0cb0-438e-bda6-fe21332f6929). Its statement is independent of the polynomial and matrix constructions. It records the coefficient extraction proved in this development, rather than attributing 3.762 to the earlier paper.
+
+## Significance and current status
+
+The result gives one coefficient that works simultaneously for every positive dimension and degree. Such uniformity distinguishes it from estimates that hold only for a fixed degree or only as the dimension tends to infinity. It also preserves the stated convention at polynomial zeros, so the class of threshold functions is unchanged at the boundary.
+
+The formal contribution is a complete connection from the polynomial and the actual finite cube to the numerical bound. The final theorem does not assume the existence of a grading, an energy bound, a coupling estimate or a small-dimension certificate. Those mathematical components are discharged inside the proof chain. The two supporting milestones are independently importable results, and the live dependency graph records both as actual prerequisites of the goal's accepted reduction.
+
+All three theorem nodes are currently Proved. The closed repository proof was rebuilt with Lean 4.33.1 and the platform's Mathlib revision, and an [independent Linux build](https://github.com/Anchen0823/average-sensitivity-lean/actions/runs/38903817629) also passed. The final theorem's axiom dependencies are exactly `propext`, `Classical.choice` and `Quot.sound`. These checks establish the formal result under the displayed definitions; they do not establish optimality of the coefficient or independent human peer review.
+
+## Difficulty
+
+A one-sided bound on the difference of two variables does not by itself bound the difference in the opposite direction. The equal-distribution condition is therefore essential to the coupling milestone. Omitting it would change the problem into a false assertion. In the polynomial application, the relevant distributions also have to come from the actual block masses of the constructed grading; treating those masses or the grading properties as free assumptions would omit the central analytic work.
+
+The constant extraction must cover all admissible dimension-degree pairs. A calculation for finitely many dimensions cannot establish the universal statement, while an asymptotic first-moment estimate can leave uncontrolled small dimensions or degree-dependent errors. The formal target includes both the infinite range and every exceptional finite case. Numerical optimization and floating-point experiments are not premises of the accepted result.
+
+## Formalization scope
+
+Cube vertices are functions `Fin n → Bool`, interpreted coordinatewise as signs. A coordinate flip is an explicit function update, and each probability is a finite cardinality divided by $2^n$. The polynomial is a Mathlib `MvPolynomial (Fin n) ℝ`; the degree bound refers to its total degree. General polynomial inputs are included through a proved value-preserving, degree-nonincreasing multilinearization. Positive dimensions ensure the normalizing denominator is nonzero. Degree zero and dimension zero are outside the displayed goal's quantifiers.
+
+The two definition references provide the original cube/threshold interface and the exact scalar moment interface. The coupling milestone uses finite weighted sums, so equality of distributions is stated for every real test function without additional measurability assumptions. The scalar milestone quantifies over an arbitrary real $A$ satisfying its two explicit upper bounds. The main goal has no analogous auxiliary assumptions.
+
+This is a Research Paper mission for a completed fixed-source development, with the main theorem and both milestones linked by their existing identities. It creates no duplicate theorem statements. Alternative proofs and subsequent sharper bounds can reuse these interfaces, but they are not claimed as completed by this mission. The construction and earlier probability refinement remain attributed to their original sources. Proof development and source preparation used OpenAI Codex.
+
+## Selected references
+
+- OpenAI, *Average sensitivity of polynomial threshold functions*, preprint and Lean source, 2026. [Fixed Lean development](https://github.com/openai/math/tree/1581d4cbdd69a0faf34b2089614fe2a814316a6a/lean/OAI/Combinatorics/GotsmanLinial).
+- Prathmesh Lagdive, Vaibhav Aglave and Suraj Damre, *An elementary improvement of the average sensitivity bound for polynomial threshold functions*, 2026, Lemma 2 and the dimension-degree estimate. [Fixed manuscript source](https://github.com/log-prathm/ptf-average-sensitivity/blob/5e9f26cf74935f08be20f9ac4deb57b291d707d8/paper/main.tex).
+- Anchen0823, *Average sensitivity: a Lean proof with coefficient 3.762*, source development, 2026. [Verified source revision](https://github.com/Anchen0823/average-sensitivity-lean/tree/a0d88dedd8e56f371e40bf1dfcd533afb51e3d04). Prove2Me accepted main submission: `0f539328-c783-4509-a78e-a86ac777468c`.

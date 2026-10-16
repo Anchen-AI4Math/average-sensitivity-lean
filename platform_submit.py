@@ -24,10 +24,10 @@ if action=='get':
 key=sys.argv[2]
 if key in state:
     print(json.dumps(state[key],ensure_ascii=True)[:2000]);sys.exit()
-if action=='json':
+if action in ('json','patch'):
     path=sys.argv[3];data=json.loads((ROOT/sys.argv[4]).read_text(encoding='utf8'))
     state[key]={'started_at':time.time(),'endpoint':path};save()
-    result=req('POST',path,data)
+    result=req('PATCH' if action=='patch' else 'POST',path,data)
 elif action=='verify':
     tid=sys.argv[3];name=sys.argv[4]
     boundary='----ProofBoundary'+uuid.uuid4().hex

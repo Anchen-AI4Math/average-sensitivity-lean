@@ -1,0 +1,21 @@
+{
+  "id": "ad263e82-6ee3-4590-bc7b-ba3f6a6c6532",
+  "kind": "definition",
+  "theorem_name": "AverageSensitivity_Constants3762",
+  "theorem_title": "Exact symmetric-binomial absolute moments and central coefficients",
+  "formal_statement": "",
+  "natural_language_statement": "For a nonnegative integer n, rawMAD(n) is the unnormalised first absolute moment of the symmetric random walk: the sum of binomial(n,j) times |2j-n|. The normalised binomial mean absolute deviation is mad(n)=rawMAD(n)/(2*2^n). For k>=0, central(k)=binomial(2k,k)/4^k. These are finite-sum definitions; no estimates or conjectures are assumed.",
+  "definitions": "import Mathlib.Data.Nat.Choose.Central\nimport Mathlib.Algebra.BigOperators.Ring.Finset\nimport Mathlib.Data.Real.Basic\n\nopen scoped BigOperators\nnamespace AverageSensitivity\n\nnoncomputable def rawMAD (n : ℕ) : ℝ :=\n  ∑ j ∈ Finset.range (n+1), (n.choose j : ℝ)*|2*(j:ℝ)-(n:ℝ)|\n\nnoncomputable def central (k : ℕ) : ℝ := (Nat.centralBinom k:ℝ)/(4:ℝ)^k\n\nnoncomputable def mad (n : ℕ) : ℝ := rawMAD n/(2*(2:ℝ)^n)\n\nend AverageSensitivity\n",
+  "source": "https://github.com/Anchen0823/average-sensitivity-lean/blob/main/AverageSensitivity/BinomialMAD.lean",
+  "tags": [
+    "average-sensitivity-3762",
+    "probability",
+    "boolean-functions"
+  ],
+  "visibility": "public",
+  "status": "PUBLISHED",
+  "error_message": "",
+  "theorem_id": "633e949d-87e1-4269-ae40-5c3637827542",
+  "created_at": "2026-10-16T12:49:42.046807+00:00",
+  "updated_at": "2026-10-16T12:49:47.13324+00:00"
+}

@@ -1,0 +1,21 @@
+{
+  "id": "65affe15-b6d5-4e6c-bba2-fd96fcd85cdc",
+  "kind": "problem",
+  "theorem_name": "AverageSensitivity.finite_coupling_refined",
+  "theorem_title": "Refined one-sided coupling: mean squared displacement at most 4 a b + a squared",
+  "formal_statement": "theorem AverageSensitivity.finite_coupling_refined {Ω : Type*} [Fintype Ω]\n    (w U V : Ω → ℝ) (m a : ℝ)\n    (hw : ∀ i, 0 ≤ w i) (hprob : ∑ i, w i = 1)\n    (hsame : ∀ φ : ℝ → ℝ, ∑ i, w i * φ (U i) = ∑ i, w i * φ (V i))\n    (ha : 0 ≤ a) (hstep : ∀ i, w i ≠ 0 → V i-U i ≤ a) :\n    ∑ i, w i*(U i-V i)^2 ≤ 4*a*(∑ i, w i*|U i-m|)+a^2 := by sorry\n",
+  "natural_language_statement": "Let a finite set carry nonnegative probability weights w, and let U and V be two real-valued functions with identical weighted distributions. Let m be any real centre and a>=0. Assume V-U<=a at every point of positive weight. With b=E|U-m|, the conclusion is\n$$\\mathbb E (U-V)^2\\le 4ab+a^2.$$\nThe distribution hypothesis means equality of E(phi(U)) and E(phi(V)) for every real function phi. The centre need not be the mean. This is the finite form of Lemma 2 of Lagdive, Aglave and Damre (2026), and is the probability refinement used by the coefficient-3.762 result.",
+  "definitions": "import Mathlib\nopen scoped BigOperators\n",
+  "source": "https://github.com/Anchen0823/average-sensitivity-lean/blob/b2e634415548e050c115f6f12732d8b6b4a5d27f/AverageSensitivity/RefinedCoupling.lean",
+  "tags": [
+    "average-sensitivity-3762",
+    "boolean-functions",
+    "inequalities"
+  ],
+  "visibility": "public",
+  "status": "PUBLISHED",
+  "error_message": "",
+  "theorem_id": "d868ab6f-94bc-4ede-a132-0fda2ff6ba88",
+  "created_at": "2026-10-16T12:51:28.339023+00:00",
+  "updated_at": "2026-10-16T12:51:38.069497+00:00"
+}

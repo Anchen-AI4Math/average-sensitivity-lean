@@ -27,6 +27,40 @@ The default build prints its axioms: `propext`, `Classical.choice`, `Quot.sound`
 The complete proof uses no unproved mathematical hypotheses or computational
 axioms.
 
+## Published verification
+
+- [Complete theorem on Prove2Me](https://prove2.me/theorems/e1a9c1cb-97c1-4ea0-a4ad-d43e8412ac61): **ACCEPTED**, submission `0f539328-c783-4509-a78e-a86ac777468c`.
+- [Finite coupling refinement](https://prove2.me/theorems/d868ab6f-94bc-4ede-a132-0fda2ff6ba88): **ACCEPTED**.
+- [Exact constant extraction](https://prove2.me/theorems/958e04fd-0cb0-438e-bda6-fe21332f6929): **ACCEPTED**.
+- [Independent Linux build and axiom check](https://github.com/Anchen0823/average-sensitivity-lean/actions/runs/38903817629): **success**, proof revision `a0d88dedd8e56f371e40bf1dfcd533afb51e3d04`.
+- [Submission to Big O Speedrun](https://github.com/bigospeedrun/site/issues/3): requested reviewed import. Big O listing and its evidence level are decided by its maintainers.
+
+## Prove2Me mission proposal
+
+The completed theorem tree is organized into the public-intended Research Paper
+proposal **Average sensitivity 3.762: refined coupling and a complete Lean proof**
+(`f1d5911a-0f78-458d-a466-efe14879e460`). Its current status is **Draft**, so this
+is not yet a live mission in the public catalog.
+
+The two definition references come first, followed by these accepted theorem
+references:
+
+1. **Lemma 2 — Refined finite one-sided coupling** (milestone).
+2. **Theorem extract_constant — Universal coefficient 3.762** (milestone).
+3. **AverageSensitivity.polynomial_bound_3762_general** (goal).
+
+Both milestones are verified dependencies of the goal's accepted reduction.
+The proposal creates no duplicate theorem or definition statements. See
+[`Platform/mission_description.md`](Platform/mission_description.md) for the
+full introduction and [`Verification/mission_audit.json`](Verification/mission_audit.json)
+for the checked structure.
+
+The account owner can review the proposal under
+[My missions](https://prove2.me/my-missions), confirm its five items, and click
+**Submit Proposal**. Prove2Me reserves this self-audit and submission step for
+the human owner; a moderator then decides public mission approval. The existing
+theorems and accepted proofs are already public independently of this proposal.
+
 ## Proof and attribution
 
 The weighted Walsh grading, matrix edge recovery, and original coefficient-eight

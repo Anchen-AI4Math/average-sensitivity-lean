@@ -1,0 +1,54 @@
+{
+  "checked_at": "2026-10-16T13:11:09.758885+00:00",
+  "proposal_id": "f1d5911a-0f78-458d-a466-efe14879e460",
+  "name": "Average sensitivity 3.762: refined coupling and a complete Lean proof",
+  "status": "Draft",
+  "intended_visibility": "public",
+  "live_mission_id": null,
+  "main_theorem": "e1a9c1cb-97c1-4ea0-a4ad-d43e8412ac61",
+  "ordered_items": [
+    {
+      "id": "285db387-e40c-4b78-9c4d-4bb40fb3cbc0",
+      "theorem_id": "84fc8258-d917-40bf-b18b-447fc66263d6",
+      "theorem_name": "GotsmanLinial",
+      "role": null,
+      "status": "Definition"
+    },
+    {
+      "id": "160465b4-54da-43e0-a763-a3e500c642d1",
+      "theorem_id": "633e949d-87e1-4269-ae40-5c3637827542",
+      "theorem_name": "AverageSensitivity_Constants3762",
+      "role": null,
+      "status": "Definition"
+    },
+    {
+      "id": "e2b26343-98da-4146-872f-b6f20a72058c",
+      "theorem_id": "d868ab6f-94bc-4ede-a132-0fda2ff6ba88",
+      "theorem_name": "AverageSensitivity.finite_coupling_refined",
+      "role": "milestone",
+      "status": "Proved"
+    },
+    {
+      "id": "a375ce20-4c6d-4dff-b1b2-47e88a8beed6",
+      "theorem_id": "958e04fd-0cb0-438e-bda6-fe21332f6929",
+      "theorem_name": "AverageSensitivity.extract_constant",
+      "role": "milestone",
+      "status": "Proved"
+    },
+    {
+      "id": "c6735a97-87ba-47f1-87c4-ff43b44fafb1",
+      "theorem_id": "e1a9c1cb-97c1-4ea0-a4ad-d43e8412ac61",
+      "theorem_name": "AverageSensitivity.polynomial_bound_3762_general",
+      "role": "goal",
+      "status": "Proved"
+    }
+  ],
+  "milestone_count": 2,
+  "all_items_reference_existing_nodes": true,
+  "both_milestones_are_actual_goal_dependencies": true,
+  "all_theorem_nodes_proved": true,
+  "open_proof_nodes": 0,
+  "human_confirmations_performed_by_agent": false,
+  "remaining_step": "Human owner confirms the five items and clicks Submit Proposal; moderator approval makes the mission live.",
+  "review_entry": "https://prove2.me/my-missions"
+}

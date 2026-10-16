@@ -1,0 +1,42 @@
+{
+  "scope": "Complete arbitrary-real-polynomial theorem, not a conditional model statement",
+  "lean": "4.33.1",
+  "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "coefficient": "1881/500",
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "checks": [
+    {
+      "command": "lake build AverageSensitivity",
+      "exit_code": 0,
+      "log": "Verification/closed_build.log"
+    },
+    {
+      "command": "lake env lean AxiomAudit.lean",
+      "exit_code": 0,
+      "log": "Verification/axiom_audit.log"
+    },
+    {
+      "command": "lake env lean -DautoImplicit=false Platform/finite_coupling_refined_solution.lean",
+      "exit_code": 0,
+      "log": "Verification/platform_finite_build.log"
+    },
+    {
+      "command": "lake env lean -DautoImplicit=false Platform/extract_constant_solution.lean",
+      "exit_code": 0,
+      "log": "Verification/platform_extraction_build.log"
+    },
+    {
+      "command": "lake env lean -DautoImplicit=false Platform/polynomial_bound_3762_general_solution.lean",
+      "exit_code": 0,
+      "log": "Verification/platform_main_build.log"
+    }
+  ],
+  "source_sha256": {
+    "AverageSensitivity/Multilinearization.lean": "0da0424c52cad09d59e3851fd2a2d4a9a21396c2169b91320e8daf73117670e1",
+    "Platform/polynomial_bound_3762_general_solution.lean": "ada3b7e6ac92e00e647c8950bd16bcc5bc163b10d831ba85ed8edb0412eda9d1"
+  }
+}

@@ -1,0 +1,194 @@
+{
+  "root_id": "e1a9c1cb-97c1-4ea0-a4ad-d43e8412ac61",
+  "nodes": [
+    {
+      "node_type": "theorem",
+      "theorem_id": "633e949d-87e1-4269-ae40-5c3637827542",
+      "theorem_name": "AverageSensitivity_Constants3762",
+      "theorem_title": "Exact symmetric-binomial absolute moments and central coefficients",
+      "status": "Definition",
+      "formal_statement": "",
+      "natural_language_statement": "For a nonnegative integer n, rawMAD(n) is the unnormalised first absolute moment of the symmetric random walk: the sum of binomial(n,j) times |2j-n|. The normalised binomial mean absolute deviation is mad(n)=rawMAD(n)/(2*2^n). For k>=0, central(k)=binomial(2k,k)/4^k. These are finite-sum definitions; no estimates or conjectures are assumed.",
+      "created_at": "2026-10-16T12:49:46.199116+00:00",
+      "vote_count": 0,
+      "definition": "import Mathlib.Data.Nat.Choose.Central\nimport Mathlib.Algebra.BigOperators.Ring.Finset\nimport Mathlib.Data.Real.Basic\n\nopen scoped BigOperators\nnamespace AverageSensitivity\n\nnoncomputable def rawMAD (n : ℕ) : ℝ :=\n  ∑ j ∈ Finset.range (n+1), (n.choose j : ℝ)*|2*(j:ℝ)-(n:ℝ)|\n\nnoncomputable def central (k : ℕ) : ℝ := (Nat.centralBinom k:ℝ)/(4:ℝ)^k\n\nnoncomputable def mad (n : ℕ) : ℝ := rawMAD n/(2*(2:ℝ)^n)\n\nend AverageSensitivity\n",
+      "source": "https://github.com/Anchen0823/average-sensitivity-lean/blob/main/AverageSensitivity/BinomialMAD.lean",
+      "tags": [
+        "average-sensitivity-3762",
+        "boolean-functions",
+        "probability"
+      ],
+      "audits": [],
+      "created_by": "418b0711-62a5-416a-ba5d-876ae8758fe3",
+      "created_by_username": "Yuxuan Xu",
+      "deprecated_at": null,
+      "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "env_display_name": "Mathlib 0df444a (Lean v4.33.1)",
+      "has_more_children": false,
+      "has_more_parents": false
+    },
+    {
+      "node_type": "theorem",
+      "theorem_id": "84fc8258-d917-40bf-b18b-447fc66263d6",
+      "theorem_name": "GotsmanLinial",
+      "theorem_title": null,
+      "status": "Definition",
+      "formal_statement": "",
+      "natural_language_statement": "The cube Cube(n) is the set of Boolean vectors of length n, with cubeCoord sending a vertex x and coordinate i to +1 if x i is true and −1 otherwise, and flip(i,x) toggling the ith bit of x. thresholdSign(t) is 1 when t≥0 and −1 otherwise. For a real-valued function f on the cube, sensitiveVertices(f,i) is the set of vertices x where f(x)≠f(flip(i,x)), and averageSensitivity(f) is the sum over coordinates i of the number of such vertices divided by 2^n. A polynomial p in n real variables is IsMultilinear if every monomial in its support has exponent at most 1 in each variable. polynomialValue(p,x) evaluates p at the ±1 point given by cubeCoord of x, and polynomialThreshold(p) is the ±1-valued function x ↦ thresholdSign(polynomialValue(p,x)). GotsmanLinialStatement is a defined proposition, not an established theorem: for all natural numbers n and d with 1≤d≤n, and every real multilinear polynomial p in n variables with total degree at most d, the average sensitivity of the threshold function of p is at most 8·d·√n.",
+      "created_at": "2026-10-07T04:32:13.228978+00:00",
+      "vote_count": 0,
+      "definition": "-- Generated from openai/math @ adc7f1241b42e322a6451854ab7e4b4c146bf78a\n-- Source: lean/ComparatorChallenges/GotsmanLinial.lean; bytes 192..1564\n-- Kind: block; original declaration names and bodies preserved.\n-- Source groups are independent. Target: Lean 4.33.1; see compilation.json.\n\nimport Mathlib.Algebra.MvPolynomial.Degrees\nimport Mathlib.Algebra.BigOperators.Field\nimport Mathlib.Data.Fintype.BigOperators\nimport Mathlib.Analysis.Real.Sqrt\nimport Mathlib.Tactic.NormNum\n\nnamespace OAI\n\nopen scoped BigOperators\n\nnamespace LeanBlast.GotsmanLinial\n\nabbrev Cube (n : ℕ) := Fin n → Bool\n\ndef cubeCoord {n : ℕ} (x : Cube n) (i : Fin n) : ℝ :=\n  if x i then 1 else -1\n\ndef flip {n : ℕ} (i : Fin n) (x : Cube n) : Cube n :=\n  Function.update x i (!(x i))\n\nnoncomputable def thresholdSign (t : ℝ) : ℝ :=\n  if 0 ≤ t then 1 else -1\n\nnoncomputable def sensitiveVertices {n : ℕ} (f : Cube n → ℝ) (i : Fin n) :\n    Finset (Cube n) := by\n  classical\n  exact Finset.univ.filter fun x => f x ≠ f (flip i x)\n\nnoncomputable def averageSensitivity {n : ℕ} (f : Cube n → ℝ) : ℝ :=\n  ∑ i : Fin n, ((sensitiveVertices f i).card : ℝ) / (2 : ℝ) ^ n\n\ndef IsMultilinear {n : ℕ} (p : MvPolynomial (Fin n) ℝ) : Prop :=\n  ∀ m ∈ p.support, ∀ i : Fin n, m i ≤ 1\n\nnoncomputable def polynomialValue {n : ℕ} (p : MvPolynomial (Fin n) ℝ)\n    (x : Cube n) : ℝ :=\n  MvPolynomial.eval (cubeCoord x) p\n\nnoncomputable def polynomialThreshold {n : ℕ} (p : MvPolynomial (Fin n) ℝ) :\n    Cube n → ℝ :=\n  fun x => thresholdSign (polynomialValue p x)\n\ndef GotsmanLinialStatement : Prop :=\n  ∀ (n d : ℕ), 1 ≤ n → 1 ≤ d → d ≤ n →\n    ∀ p : MvPolynomial (Fin n) ℝ,\n      IsMultilinear p → p.totalDegree ≤ d →\n        averageSensitivity (polynomialThreshold p) ≤ 8 * (d : ℝ) * Real.sqrt (n : ℝ)\n\n\n\nend LeanBlast.GotsmanLinial\nend OAI\n",
+      "source": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/ComparatorChallenges/GotsmanLinial.lean",
+      "tags": [],
+      "audits": [
+        {
+          "audit_id": "b92ee218-50a5-45c8-917f-e044ca715b41",
+          "reviewer_id": "942b6fef-c91c-42f1-bd47-ebd4b637520c",
+          "reviewer_username": "Community (Bot)",
+          "decision": "confirm",
+          "comment": "Confirmed by the moderator at approval.",
+          "created_at": "2026-10-07T07:13:59.444733+00:00"
+        },
+        {
+          "audit_id": "c41f5c96-e078-4320-8b96-bf272e3d19e5",
+          "reviewer_id": "1218a2a5-fec3-4902-88f2-735b90eee971",
+          "reviewer_username": "marwahaha",
+          "decision": "confirm",
+          "comment": "Confirmed by the mission captain (proposal self-audit).",
+          "created_at": "2026-10-07T07:13:59.586989+00:00"
+        }
+      ],
+      "created_by": "2d179df8-bdcc-43d6-ac3c-03247c42e9b2",
+      "created_by_username": "wurtle",
+      "deprecated_at": null,
+      "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "env_display_name": "Mathlib 0df444a (Lean v4.33.1)",
+      "has_more_children": false,
+      "has_more_parents": false
+    },
+    {
+      "node_type": "theorem",
+      "theorem_id": "958e04fd-0cb0-438e-bda6-fe21332f6929",
+      "theorem_name": "AverageSensitivity.extract_constant",
+      "theorem_title": "Extract the universal average-sensitivity coefficient 3.762 from the binomial moment bound",
+      "status": "Proved",
+      "formal_statement": "theorem AverageSensitivity.extract_constant (n d : ℕ) (hn : 1 ≤ n) (hd : 1 ≤ d)\n    (A : ℝ) (htrivial : A ≤ (n:ℝ))\n    (hrefined : A ≤ 8*(d:ℝ)*mad n+2*(d:ℝ)^2) :\n    A ≤ (1881/500:ℝ)*(d:ℝ)*Real.sqrt (n:ℝ) := by sorry\n",
+      "natural_language_statement": "For every pair of positive integers n,d and every real A satisfying\n$$A\\le n,\\qquad A\\le8d b_n+2d^2,$$\nwhere b_n is the exact mean absolute deviation of Bin(n,1/2) as defined by AverageSensitivity.mad, prove\n$$A\\le\\frac{1881}{500}d\\sqrt n.$$\nNo condition d<=n is needed. The statement is a scalar extraction theorem, independent of the polynomial-threshold construction. Its role is to turn the refined dimension-degree estimate into the universal coefficient 3.762.",
+      "created_at": "2026-10-16T12:51:42.341602+00:00",
+      "vote_count": 0,
+      "preamble": "import Mathlib\nimport Definitions.Def_AverageSensitivity_Constants3762\nopen scoped BigOperators\nopen AverageSensitivity\n",
+      "source": "https://github.com/Anchen0823/average-sensitivity-lean/blob/b2e634415548e050c115f6f12732d8b6b4a5d27f/AverageSensitivity/ConstantExtraction.lean",
+      "tags": [
+        "average-sensitivity-3762",
+        "boolean-functions",
+        "inequalities"
+      ],
+      "audits": [],
+      "created_by": "418b0711-62a5-416a-ba5d-876ae8758fe3",
+      "created_by_username": "Yuxuan Xu",
+      "deprecated_at": null,
+      "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "env_display_name": "Mathlib 0df444a (Lean v4.33.1)",
+      "has_more_children": false,
+      "has_more_parents": false
+    },
+    {
+      "node_type": "theorem",
+      "theorem_id": "d868ab6f-94bc-4ede-a132-0fda2ff6ba88",
+      "theorem_name": "AverageSensitivity.finite_coupling_refined",
+      "theorem_title": "Refined one-sided coupling: mean squared displacement at most 4 a b + a squared",
+      "status": "Proved",
+      "formal_statement": "theorem AverageSensitivity.finite_coupling_refined {Ω : Type*} [Fintype Ω]\n    (w U V : Ω → ℝ) (m a : ℝ)\n    (hw : ∀ i, 0 ≤ w i) (hprob : ∑ i, w i = 1)\n    (hsame : ∀ φ : ℝ → ℝ, ∑ i, w i * φ (U i) = ∑ i, w i * φ (V i))\n    (ha : 0 ≤ a) (hstep : ∀ i, w i ≠ 0 → V i-U i ≤ a) :\n    ∑ i, w i*(U i-V i)^2 ≤ 4*a*(∑ i, w i*|U i-m|)+a^2 := by sorry\n",
+      "natural_language_statement": "Let a finite set carry nonnegative probability weights w, and let U and V be two real-valued functions with identical weighted distributions. Let m be any real centre and a>=0. Assume V-U<=a at every point of positive weight. With b=E|U-m|, the conclusion is\n$$\\mathbb E (U-V)^2\\le 4ab+a^2.$$\nThe distribution hypothesis means equality of E(phi(U)) and E(phi(V)) for every real function phi. The centre need not be the mean. This is the finite form of Lemma 2 of Lagdive, Aglave and Damre (2026), and is the probability refinement used by the coefficient-3.762 result.",
+      "created_at": "2026-10-16T12:51:37.170628+00:00",
+      "vote_count": 0,
+      "preamble": "import Mathlib\nopen scoped BigOperators\n",
+      "source": "https://github.com/Anchen0823/average-sensitivity-lean/blob/b2e634415548e050c115f6f12732d8b6b4a5d27f/AverageSensitivity/RefinedCoupling.lean",
+      "tags": [
+        "average-sensitivity-3762",
+        "boolean-functions",
+        "inequalities"
+      ],
+      "audits": [],
+      "created_by": "418b0711-62a5-416a-ba5d-876ae8758fe3",
+      "created_by_username": "Yuxuan Xu",
+      "deprecated_at": null,
+      "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "env_display_name": "Mathlib 0df444a (Lean v4.33.1)",
+      "has_more_children": false,
+      "has_more_parents": false
+    },
+    {
+      "node_type": "theorem",
+      "theorem_id": "e1a9c1cb-97c1-4ea0-a4ad-d43e8412ac61",
+      "theorem_name": "AverageSensitivity.polynomial_bound_3762_general",
+      "theorem_title": "Average sensitivity of polynomial threshold functions is at most 3.762 d sqrt(n)",
+      "status": "Proved",
+      "formal_statement": "theorem AverageSensitivity.polynomial_bound_3762_general {n d : ℕ} (hn : 1≤n) (hd : 1≤d)\n    (p : MvPolynomial (Fin n) ℝ) (hdegree : p.totalDegree≤d) :\n    averageSensitivity (polynomialThreshold p) ≤ (1881/500:ℝ)*(d:ℝ)*Real.sqrt (n:ℝ) := by sorry\n",
+      "natural_language_statement": "For all positive integers n,d, let p be any real polynomial in n variables with total degree at most d. On the uniform cube {-1,1}^n, define f(x)=1 when p(x)>=0 and f(x)=-1 otherwise. Let average sensitivity be the sum over coordinates of the probability that flipping that coordinate changes f. Then\n$$\\operatorname{AS}(f)\\le\\frac{1881}{500}d\\sqrt n.$$\nThe theorem includes zeros of p under the positive-at-zero convention and arbitrary polynomials, with no multilinearity assumption. There is no restriction d<=n. The weighted-grading construction is due to OpenAI; the refined coupling estimate is due to Lagdive, Aglave and Damre. This result formalizes their integration and extracts the sufficient coefficient 3.762; optimality is not asserted.",
+      "created_at": "2026-10-16T12:51:39.676715+00:00",
+      "vote_count": 0,
+      "preamble": "import Mathlib\nimport Definitions.Def_GotsmanLinial\nopen OAI.LeanBlast.GotsmanLinial\nopen scoped BigOperators\n",
+      "source": "https://github.com/Anchen0823/average-sensitivity-lean/blob/b2e634415548e050c115f6f12732d8b6b4a5d27f/AverageSensitivity/Multilinearization.lean",
+      "tags": [
+        "average-sensitivity-3762",
+        "boolean-functions",
+        "inequalities"
+      ],
+      "audits": [],
+      "created_by": "418b0711-62a5-416a-ba5d-876ae8758fe3",
+      "created_by_username": "Yuxuan Xu",
+      "deprecated_at": null,
+      "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "env_display_name": "Mathlib 0df444a (Lean v4.33.1)",
+      "has_more_children": false,
+      "has_more_parents": false
+    },
+    {
+      "node_type": "sketch",
+      "node_id": "sketch-0f539328-c783-4509-a78e-a86ac777468c",
+      "submission_id": "0f539328-c783-4509-a78e-a86ac777468c",
+      "parent_theorem_id": "e1a9c1cb-97c1-4ea0-a4ad-d43e8412ac61",
+      "status": "ACCEPTED",
+      "username": "Yuxuan Xu",
+      "explanation": "For every real degree-at-most-d polynomial p on the sign cube, with n,d>=1 and sign(0)=1, we prove\n$$\\operatorname{AS}(\\operatorname{sign}p)\\le\\frac{1881}{500}d\\sqrt n.$$\nFirst reduce every monomial exponent modulo two. This preserves all cube values and cannot increase total degree, yielding an explicit multilinear polynomial. A sufficiently small positive constant removes cube zeros without changing the threshold function.\nFor that nonvanishing polynomial, construct the weighted Walsh grading and its actual orthogonal projection matrices. The parity-twisted threshold has vanishing blocks below r+s=n-d. The matrix edge-recovery argument bounds sensitivity by twice the normalized anticommutator energy. The imported refined finite coupling theorem bounds that energy by 4d b_n+d^2, giving AS<=8d b_n+2d^2. The elementary counting bound gives AS<=n. The imported exact constant-extraction theorem combines these inequalities to yield 3.762.\nThe proof explicitly constructs the grading and proves both block-vanishing and edge recovery; these are not additional assumptions. The underlying matrix method is from OpenAI, and the improved finite coupling bound is from Lagdive, Aglave and Damre. All local closed theorems have only propext, Classical.choice and Quot.sound as axioms. The two new imported theorems are separately proved before this submission.\n",
+      "created_at": "2026-10-16T12:54:34.266167+00:00",
+      "child_count": 3,
+      "deprecated_at": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "84fc8258-d917-40bf-b18b-447fc66263d6",
+      "target": "sketch-0f539328-c783-4509-a78e-a86ac777468c",
+      "kind": "sketch"
+    },
+    {
+      "source": "958e04fd-0cb0-438e-bda6-fe21332f6929",
+      "target": "sketch-0f539328-c783-4509-a78e-a86ac777468c",
+      "kind": "sketch"
+    },
+    {
+      "source": "d868ab6f-94bc-4ede-a132-0fda2ff6ba88",
+      "target": "sketch-0f539328-c783-4509-a78e-a86ac777468c",
+      "kind": "sketch"
+    },
+    {
+      "source": "sketch-0f539328-c783-4509-a78e-a86ac777468c",
+      "target": "e1a9c1cb-97c1-4ea0-a4ad-d43e8412ac61",
+      "kind": "sketch"
+    },
+    {
+      "source": "84fc8258-d917-40bf-b18b-447fc66263d6",
+      "target": "e1a9c1cb-97c1-4ea0-a4ad-d43e8412ac61",
+      "kind": "structural"
+    },
+    {
+      "source": "633e949d-87e1-4269-ae40-5c3637827542",
+      "target": "958e04fd-0cb0-438e-bda6-fe21332f6929",
+      "kind": "structural"
+    }
+  ],
+  "has_hidden_deprecated": false,
+  "has_hidden_deprecated_sketches": false
+}

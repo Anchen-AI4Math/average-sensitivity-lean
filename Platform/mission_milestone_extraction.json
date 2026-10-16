@@ -1,0 +1,5 @@
+{
+  "item_id": "a375ce20-4c6d-4dff-b1b2-47e88a8beed6",
+  "milestone_title": "Theorem extract_constant — Universal coefficient 3.762",
+  "milestone_description": "The exact scalar implication AverageSensitivity.extract_constant in the present fixed-source development: for all positive integers n,d and every real A, the two bounds A ≤ n and A ≤ 8 d b_n + 2 d² imply A ≤ (1881/500) d √n. Here b_n = 2^(−n−1) ∑_{j=0}^n binom(n,j)|2j−n| is the mean absolute deviation of Binomial(n,1/2), as fixed by the referenced definition module. This includes every positive dimension and degree, with no asymptotic qualification. The coefficient extraction is proved in this development; the earlier paper is credited for the dimension-degree estimate. The linked theorem already has an ACCEPTED proof and is a dependency of the main theorem's accepted reduction. Source: https://github.com/Anchen0823/average-sensitivity-lean/blob/a0d88dedd8e56f371e40bf1dfcd533afb51e3d04/AverageSensitivity/ConstantExtraction.lean ."
+}

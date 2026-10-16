@@ -1,0 +1,21 @@
+{
+  "id": "bb965d0b-5918-42c0-86d5-2226e323cf78",
+  "kind": "problem",
+  "theorem_name": "AverageSensitivity.extract_constant",
+  "theorem_title": "Extract the universal average-sensitivity coefficient 3.762 from the binomial moment bound",
+  "formal_statement": "theorem AverageSensitivity.extract_constant (n d : ℕ) (hn : 1 ≤ n) (hd : 1 ≤ d)\n    (A : ℝ) (htrivial : A ≤ (n:ℝ))\n    (hrefined : A ≤ 8*(d:ℝ)*mad n+2*(d:ℝ)^2) :\n    A ≤ (1881/500:ℝ)*(d:ℝ)*Real.sqrt (n:ℝ) := by sorry\n",
+  "natural_language_statement": "For every pair of positive integers n,d and every real A satisfying\n$$A\\le n,\\qquad A\\le8d b_n+2d^2,$$\nwhere b_n is the exact mean absolute deviation of Bin(n,1/2) as defined by AverageSensitivity.mad, prove\n$$A\\le\\frac{1881}{500}d\\sqrt n.$$\nNo condition d<=n is needed. The statement is a scalar extraction theorem, independent of the polynomial-threshold construction. Its role is to turn the refined dimension-degree estimate into the universal coefficient 3.762.",
+  "definitions": "import Mathlib\nimport Definitions.Def_AverageSensitivity_Constants3762\nopen scoped BigOperators\nopen AverageSensitivity\n",
+  "source": "https://github.com/Anchen0823/average-sensitivity-lean/blob/b2e634415548e050c115f6f12732d8b6b4a5d27f/AverageSensitivity/ConstantExtraction.lean",
+  "tags": [
+    "average-sensitivity-3762",
+    "boolean-functions",
+    "inequalities"
+  ],
+  "visibility": "public",
+  "status": "PUBLISHED",
+  "error_message": "",
+  "theorem_id": "958e04fd-0cb0-438e-bda6-fe21332f6929",
+  "created_at": "2026-10-16T12:51:28.464095+00:00",
+  "updated_at": "2026-10-16T12:51:43.369447+00:00"
+}

@@ -1,0 +1,56 @@
+{
+  "decompositions": [
+    {
+      "submission_id": null,
+      "created_by": null,
+      "created_at": null,
+      "deprecated_at": null,
+      "deprecated_by": null,
+      "children": [
+        {
+          "definition_id": "84fc8258-d917-40bf-b18b-447fc66263d6",
+          "definition_name": "GotsmanLinial",
+          "theorem_title": null,
+          "ordinal": 0,
+          "deprecated_at": null,
+          "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474"
+        }
+      ]
+    },
+    {
+      "submission_id": "0f539328-c783-4509-a78e-a86ac777468c",
+      "created_by": "418b0711-62a5-416a-ba5d-876ae8758fe3",
+      "created_at": "2026-10-16T12:54:34.266167+00:00",
+      "deprecated_at": null,
+      "deprecated_by": null,
+      "children": [
+        {
+          "definition_id": "84fc8258-d917-40bf-b18b-447fc66263d6",
+          "definition_name": "GotsmanLinial",
+          "theorem_title": null,
+          "ordinal": 0,
+          "deprecated_at": null,
+          "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474"
+        },
+        {
+          "theorem_id": "d868ab6f-94bc-4ede-a132-0fda2ff6ba88",
+          "theorem_name": "AverageSensitivity.finite_coupling_refined",
+          "theorem_title": "Refined one-sided coupling: mean squared displacement at most 4 a b + a squared",
+          "status": "Proved",
+          "ordinal": 1,
+          "deprecated_at": null,
+          "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474"
+        },
+        {
+          "theorem_id": "958e04fd-0cb0-438e-bda6-fe21332f6929",
+          "theorem_name": "AverageSensitivity.extract_constant",
+          "theorem_title": "Extract the universal average-sensitivity coefficient 3.762 from the binomial moment bound",
+          "status": "Proved",
+          "ordinal": 2,
+          "deprecated_at": null,
+          "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474"
+        }
+      ]
+    }
+  ]
+}

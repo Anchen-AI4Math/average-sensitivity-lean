@@ -10,3 +10,7 @@ __pycache__/
 /Verification/platform_sources.json
 /Verification/mirror_normalization.json
 /Verification/*_statement.lean
+/Verification/existing_proposals.json
+/Verification/platform_actions.json
+/Verification/accepted_main_source.json
+/Verification/mission_fields_*.json
