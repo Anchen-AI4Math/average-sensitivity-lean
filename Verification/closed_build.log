@@ -1,0 +1,23 @@
+✔ [3109/3128] Built OAI.Combinatorics.GotsmanLinial.ScalarIncrements (21s)
+✔ [3110/3128] Built OAI.Combinatorics.GotsmanLinial.Walsh (23s)
+✔ [3111/3128] Built OAI.Combinatorics.GotsmanLinial.CubeOperators (27s)
+✔ [3112/3128] Built OAI.Combinatorics.GotsmanLinial.FiniteCoupling (19s)
+✔ [3113/3128] Built AverageSensitivity.RefinedCoupling (27s)
+✔ [3114/3128] Built OAI.Combinatorics.GotsmanLinial.WalshDimensions (20s)
+✔ [3115/3128] Built OAI.Combinatorics.GotsmanLinial.PolynomialDegree (21s)
+✔ [3116/3128] Built OAI.Combinatorics.GotsmanLinial.BlockCoupling (23s)
+✔ [3117/3128] Built OAI.Combinatorics.GotsmanLinial.CoordinateDegree (21s)
+✔ [3118/3128] Built OAI.Combinatorics.GotsmanLinial.SignParity (25s)
+✔ [3119/3128] Built OAI.Combinatorics.GotsmanLinial.WeightedGrading (26s)
+✔ [3120/3128] Built AverageSensitivity.BlockRefinement (23s)
+✔ [3121/3128] Built OAI.Combinatorics.GotsmanLinial.EdgeRecovery (23s)
+✔ [3122/3128] Built OAI.Combinatorics.GotsmanLinial.GradingShift (23s)
+✔ [3123/3128] Built OAI.Combinatorics.GotsmanLinial.BlockVanishing (24s)
+✔ [3124/3128] Built OAI.Combinatorics.GotsmanLinial.Main (17s)
+✔ [3125/3128] Built AverageSensitivity.PolynomialBound (17s)
+✔ [3126/3128] Built AverageSensitivity.Multilinearization (17s)
+ℹ [3127/3128] Built AverageSensitivity (17s)
+info: AverageSensitivity.lean:4:0: 'OAI.LeanBlast.GotsmanLinial.gotsmanLinialStatement' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AverageSensitivity.lean:5:0: 'AverageSensitivity.polynomial_bound_3762' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AverageSensitivity.lean:6:0: 'AverageSensitivity.polynomial_bound_3762_general' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (3128 jobs).

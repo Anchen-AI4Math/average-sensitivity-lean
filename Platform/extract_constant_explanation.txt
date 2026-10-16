@@ -1,0 +1,7 @@
+The target is the scalar implication
+$$A\le\min\{n,8db_n+2d^2\}\Longrightarrow A\le3.762d\sqrt n.$$
+Write c_k=binomial(2k,k)/4^k. The random-walk absolute-value recurrence gives b_(2k)=k c_k and b_(2k+1)=(2k+1)c_k/2. The exact induction certificate
+$$c_k^2\left(\frac{157}{50}k+\frac{1727}{2150}\right)\le1\quad(k\ge10)$$
+follows from the central-binomial ratio and a rational base case. It implies
+$$64 b_n^2\le\frac{34400}{3297}n\quad(n\ge20).$$
+For C=1881/500, this coefficient is strictly less than (C-2/C)^2. Split at n<=C^2d^2. That branch uses A<=n; the other uses the refined bound and Cd<sqrt(n). Below dimension 20, the nontrivial branch forces d=1 and 15<=n<=19; exact rational arithmetic checks those five dimensions. Lean checks the recurrences, the complete infinite tail, and every small case.

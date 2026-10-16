@@ -1,0 +1,5 @@
+The claimed inequality is
+$$\mathbb E (U-V)^2\le4a\mathbb E|U-m|+a^2.$$
+Use the potential g(t)=(t-m)|t-m|/2. Its increment over [u,v] lies between (v-u)^2/4 and (v-u)(|u-m|+|v-m|)/2. Splitting according to the order of u and v gives the pointwise majorant
+$$(u-v)^2\le4(g(u)-g(v))+2a(|u-m|+|v-m|)+a^2.$$
+Multiply by w and sum. Equal marginals cancel the potential terms and identify the two absolute moments; the weights sum to one. The scalar inequalities are proved algebraically, including zero weights and coincident endpoints. The refinement is attributed to Lagdive, Aglave and Damre; this contribution supplies its Lean proof.
