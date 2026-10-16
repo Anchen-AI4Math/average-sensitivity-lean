@@ -14,3 +14,4 @@ __pycache__/
 /Verification/platform_actions.json
 /Verification/accepted_main_source.json
 /Verification/mission_fields_*.json
+/Verification/bigo_candidate_failed_ci.log

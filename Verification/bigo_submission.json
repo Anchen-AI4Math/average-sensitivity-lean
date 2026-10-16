@@ -2,5 +2,19 @@
   "url": "https://github.com/bigospeedrun/site/issues/3",
   "status": "submitted-for-reviewed-import",
   "record_status": "not-yet-confirmed-listed",
-  "source_revision": "a0d88dedd8e56f371e40bf1dfcd533afb51e3d04"
+  "source_revision": "a0d88dedd8e56f371e40bf1dfcd533afb51e3d04",
+  "trusted_statement_pr": "https://github.com/bigospeedrun/verifier/pull/15",
+  "trusted_statement_pr_state": "OPEN",
+  "automatic_gate_status": "average-sensitivity-target-awaits-maintainer-review-and-enabling",
+  "standalone_candidate_revision": "cb8c10538e613329be16f9a949d0d75a4c7c67f0",
+  "standalone_candidate_ci": "https://github.com/Anchen0823/average-sensitivity-lean/actions/runs/38911800062",
+  "standalone_candidate_ci_result": "success",
+  "official_verifier_offline_tests": {
+    "platform": "Ubuntu",
+    "command": "python3 -m unittest discover -s tests -v",
+    "tests": 77,
+    "result": "pass",
+    "verifier_base": "318f794adac7d6f87f6974c6e1aab49ca982a622",
+    "statement_commit": "a505b4f012ae8e5b985de9022ab84e3db6766950"
+  }
 }

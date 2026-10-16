@@ -34,3 +34,11 @@ This contribution, published by Anchen0823 with assistance from OpenAI Codex, su
 The extraction uses an exact central-binomial induction certificate starting at k = 10, which controls every dimension n >= 20; the remaining nontrivial dimensions are 15 through 19. All computations in the closed proof are checked by Lean's kernel.
 
 Please review this result for import into the average-sensitivity leaderboard. The evidence level should follow your own review policy; the repository does not self-assign Big O's Lean Verified status.
+
+## Automatic-verifier admission
+
+The public verifier form does not yet include average sensitivity. A trusted statement for this board has now been proposed in [bigospeedrun/verifier PR #15](https://github.com/bigospeedrun/verifier/pull/15), following the official statement contribution guide. The PR preserves OpenAI's model byte for byte, supplies the rational-parameter target separately, and includes provenance and licensing. It changes no verifier controller, profile, record, or evidence label.
+
+A complete standalone candidate is available at [`Submission.lean`, fixed revision cb8c105](https://github.com/Anchen0823/average-sensitivity-lean/blob/cb8c10538e613329be16f9a949d0d75a4c7c67f0/Submission.lean), exporting `Race.bound : BigOSpeedrun.AverageSensitivity.Bound (1881 / 500 : ℚ)`. It imports only Mathlib. Its [independent Linux build](https://github.com/Anchen0823/average-sensitivity-lean/actions/runs/38911800062) passed both compilation and the exact final axiom guard. The official verifier's 77 offline unit tests also pass on Ubuntu with the proposed statement folder present.
+
+The remaining automatic-verification dependency is maintainer review and enabling of the trusted statement, profile, target generator, public form option, and receipt/import bindings. The standalone build is preparation for that gate, not a substitute for Comparator admission or a Big O-issued Lean Verified receipt.

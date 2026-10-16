@@ -1,0 +1,75 @@
+{
+  "conclusion": "success",
+  "headSha": "cb8c10538e613329be16f9a949d0d75a4c7c67f0",
+  "jobs": [
+    {
+      "completedAt": "2026-10-16T13:59:02Z",
+      "conclusion": "success",
+      "databaseId": 117009211323,
+      "name": "verify",
+      "startedAt": "2026-10-16T13:56:46Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-10-16T13:56:48Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-10-16T13:56:47Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-16T13:56:49Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v4",
+          "number": 2,
+          "startedAt": "2026-10-16T13:56:48Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-16T13:58:45Z",
+          "conclusion": "success",
+          "name": "Run leanprover/lean-action@v1",
+          "number": 3,
+          "startedAt": "2026-10-16T13:56:49Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-16T13:58:48Z",
+          "conclusion": "success",
+          "name": "Check final theorem axioms",
+          "number": 4,
+          "startedAt": "2026-10-16T13:58:45Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-16T13:59:00Z",
+          "conclusion": "success",
+          "name": "Check standalone Big O candidate and axioms",
+          "number": 5,
+          "startedAt": "2026-10-16T13:58:48Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-16T13:59:00Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 10,
+          "startedAt": "2026-10-16T13:59:00Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-16T13:59:00Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 11,
+          "startedAt": "2026-10-16T13:59:00Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/Anchen0823/average-sensitivity-lean/actions/runs/38911800062/job/117009211323"
+    }
+  ],
+  "status": "completed",
+  "url": "https://github.com/Anchen0823/average-sensitivity-lean/actions/runs/38911800062"
+}

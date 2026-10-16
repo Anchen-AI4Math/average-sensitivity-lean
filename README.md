@@ -70,6 +70,14 @@ verifier-owned profile, as described in its
 The site issue above is a record-import request; it is not an automatic proof
 submission or a Big O verification receipt.
 
+The missing trusted target is proposed in
+[bigospeedrun/verifier PR #15](https://github.com/bigospeedrun/verifier/pull/15).
+That PR contains only the frozen model, separate parameterized statement,
+provenance and licensing; maintainer review and verifier-owned enabling remain
+pending. The [standalone candidate's Linux build](https://github.com/Anchen0823/average-sensitivity-lean/actions/runs/38911800062)
+passed, including the exact `Race.bound` permitted-axiom guard, at proof revision
+`cb8c10538e613329be16f9a949d0d75a4c7c67f0`.
+
 [`Submission.lean`](Submission.lean) is a complete standalone candidate for the
 proposed average-sensitivity target, exporting
 `Race.bound : BigOSpeedrun.AverageSensitivity.Bound (1881 / 500 : ℚ)`.

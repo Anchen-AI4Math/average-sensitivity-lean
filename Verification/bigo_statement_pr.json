@@ -1,0 +1,44 @@
+{
+  "files": [
+    {
+      "path": "challenges/average-sensitivity/LICENSE",
+      "additions": 201,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "challenges/average-sensitivity/NOTICE",
+      "additions": 13,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "challenges/average-sensitivity/OAI/Combinatorics/GotsmanLinial/Model.lean",
+      "additions": 76,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "challenges/average-sensitivity/README.md",
+      "additions": 97,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "challenges/average-sensitivity/Statement.lean",
+      "additions": 26,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "challenges/average-sensitivity/provenance.json",
+      "additions": 14,
+      "deletions": 0,
+      "changeType": "ADDED"
+    }
+  ],
+  "headRefOid": "a505b4f012ae8e5b985de9022ab84e3db6766950",
+  "isDraft": false,
+  "state": "OPEN",
+  "url": "https://github.com/bigospeedrun/verifier/pull/15"
+}
