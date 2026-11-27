@@ -1,5 +1,7 @@
 # Average sensitivity: a Lean proof with coefficient 3.762
 
+**Cite the verified source snapshot:** [DOI 10.5281/zenodo.24596575](https://doi.org/10.5281/zenodo.24596575) (Zenodo, commit [`cb8c1053`](https://github.com/Anchen-AI4Math/average-sensitivity-lean/tree/cb8c10538e613329be16f9a949d0d75a4c7c67f0)).
+
 For every real polynomial `p` in `n ≥ 1` variables of total degree at most
 `d ≥ 1`, its threshold function on the uniform sign cube satisfies
 
