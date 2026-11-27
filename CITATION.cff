@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use this proof, please cite the verified source snapshot below."
+title: "Average sensitivity: a Lean proof with coefficient 3.762"
+type: software
+authors:
+  - family-names: Xu
+    given-names: Yuxuan
+    orcid: "https://orcid.org/0009-0001-8760-5277"
+version: "cb8c1053"
+doi: "10.5281/zenodo.24596575"
+date-released: "2026-10-23"
+license: Apache-2.0
+repository-code: "https://github.com/Anchen-AI4Math/average-sensitivity-lean"
